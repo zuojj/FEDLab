@@ -93,3 +93,15 @@ info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this comm
 * Visual Studio Code: Flow-Language-Support 
 * Sublime Text:Flow 和 SublimeLinter-flow
 更多请参考：https://flow.org/en/docs/editors/
+
+感谢您的阅读
+
+--eof--
+
+作者[煦涵]
+2017年05月20日
+
+[center]
+下面是「FED实验室」的微信公众号二维码，欢迎长按、扫描关注：
+![关注FED实验室](https://github.com/zuojj/fedlab/blob/master/fedlab_qrcode.jpg)
+[/center]
