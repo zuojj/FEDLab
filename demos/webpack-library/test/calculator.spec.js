@@ -12,7 +12,6 @@ let calculator;
 describe('Given an instance of my Calculator library', () => {
     before(() => {
         calculator = new Calculator();
-        console.log(calculator);
     });
     describe('add(1,2) ', () => {
         it('should return the 3', () => {

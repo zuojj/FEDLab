@@ -98,19 +98,51 @@ module.exports = function () {
 
     _createClass(Calculator, [{
         key: "add",
+
+        /**
+         * 加法
+         * 
+         * @param {Number} a 
+         * @param {Number} b 
+         * @returns 
+         */
         value: function add(a, b) {
             return a + b;
         }
+        /**
+         * 减法
+         * 
+         * @param {Number} a 
+         * @param {Number} b 
+         * @returns 
+         */
+
     }, {
         key: "subtract",
         value: function subtract(a, b) {
             return a - b;
         }
+        /**
+         * 乘法
+         * 
+         * @param {Number} a 
+         * @param {Number} b 
+         * @returns 
+         */
+
     }, {
         key: "multiply",
         value: function multiply(a, b) {
             return a * b;
         }
+        /**
+         * 除法
+         * 
+         * @param {Number} a 
+         * @param {Number} b 
+         * @returns 
+         */
+
     }, {
         key: "divide",
         value: function divide(a, b) {

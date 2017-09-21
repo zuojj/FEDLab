@@ -9,7 +9,6 @@ function resolve(dir) {
     return path.join(__dirname, dir)
 }
 
-console.log('production' === ENV);
 if ('production' === ENV) {
     plugins.push(new webpack.optimize.UglifyJsPlugin({
         compress: {
@@ -23,8 +22,6 @@ if ('production' === ENV) {
     }));
     filename = 'calculator.js';
 }
-
-console.log(plugins);
 
 module.exports = {
     entry: {
