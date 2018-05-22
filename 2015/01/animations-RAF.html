@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>animations-RAF</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="../../css/common.css" />
+</head>
+<body>
+<div id="page">
+	<header class="header">
+		<a href="http://www.zuojj.com" title="Benjamin">Back to Home</a>
+	</header>
+	<section class="content">
+		<style type="text/css">
+		.animate {
+			width: 200px;
+			height: 200px;
+			margin: 0 auto;
+			border-radius: 50%;
+			background-color: #f00;
+			line-height: 200px;
+			border-radius: 50%;
+			text-align: center;
+			color: #fff;
+			font-size: 20px;
+		}
+
+		.animate-input  {
+			margin-top: 10px;
+			text-align: center;
+		}
+		</style>
+
+		<div id="animate-RAF" class="animate animate-RAF">RAF Animation</div>
+		<div class="animate-input"><input type="button" id="btn_start" value="Start" style="width:100px;height:30px"></div>
+
+		<script type="text/javascript">
+			var animate_raf   = document.getElementById("animate-RAF"),
+				btn_start = document.getElementById("btn_start"),
+				frameid   = null;
+
+			function frame(time) {
+				animate_raf.style['-webkit-transform'] = 'rotate('+ Math.cos(time/1000)*360 +'deg)';
+				frameid = requestAnimationFrame(frame);
+			}
+
+			// bind Event
+			btn_start.addEventListener("click", function(event) {
+				var val = this.value;
+
+				if(val === "Start") {
+					frameid = requestAnimationFrame(frame);
+					this.value = "Pause";
+				}else {
+					this.value = "Start";
+					cancelAnimationFrame(frameid);
+				}
+			}, false);
+
+		</script>
+	</section>
+	<footer class="footer">
+		<a href="http://www.zuojj.com" title="Benjamin-专注前端开发和用户体验">Benjamin-专注前端开发和用户体验</a>
+	</footer>
+</div>
+</body>
+</html>

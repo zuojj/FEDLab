@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>验证priority与compile的关系</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="../css/common.css" />
+<style type="text/css">
+
+</style>
+<body>
+<div id="page">
+	<header class="header">
+		<a href="http://www.zuojj.com" title="Benjamin">Back to Home</a>
+	</header>
+	<section class="content">
+		<div ng-app="myApp">
+			<div ng-my-a ng-my-b></div>
+			<br>
+			打开控制台查看运行结果
+		</div>
+	</section>
+	<footer class="footer">
+		<a href="http://www.zuojj.com" title="Benjamin-专注前端开发和用户体验">Benjamin-专注前端开发和用户体验</a>
+	</footer>
+</div>
+
+<script type="text/javascript" src="../../tdocs/angular-1.3.4/angular.js"></script>	
+<script type="text/javascript">
+	angular.module('myApp', [])
+	.directive('ngMyA', function() {
+		return {
+			priority: 2,
+			restrict: 'A',
+			compile: function() {
+				console.log("ng-my-a-compile");
+				return function() {
+					console.log("ng-my-a-link");
+				}
+			}
+		};
+	})
+	.directive('ngMyB', function() {
+		return {
+			priority: 1,
+			restrict: 'A',
+			template: '<div>ng-my-b指令</div>',
+			compile: function() {
+				console.log("ng-my-b-compile");
+
+				return function() {
+					console.log("ng-my-b-link");
+				};
+			}
+		};
+	})
+</script>
+
+</body>
+</html>

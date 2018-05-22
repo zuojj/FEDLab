@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body>
+<div ng-app="myApp">
+	<div ng-controller="FirstController as d">
+		<input type="text" ng-model="d.data.message">
+
+		{{d.data.reverseMessage(d.data.message)}}
+	</div>
+
+	<div ng-controller="SecondController as d">
+		<input type="text" ng-model="d.data.message">
+
+		{{d.data.reverseMessage(d.data.message)}}
+	</div>
+</div>
+
+<script type="text/javascript" src="../../tdocs/angular-1.3.4/angular.js"></script>	
+<script type="text/javascript">
+	angular.module('myApp', [])
+
+	.controller("FirstController", function($scope, commonService) {
+		this.data = commonService;
+	})
+	.controller('SecondController', function($scope, commonService) {
+		this.data = commonService;
+	})
+	.factory('commonService', function() {
+		return {
+			message: 'I am data from a service',
+			reverseMessage: function(message) {
+				return message.split(" ").reverse().join(" ");
+			}
+		};
+	})
+</script>
+</body>
+</html>

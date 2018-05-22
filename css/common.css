@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Benjamin (cuew1987@gmail.com)
+ * @date    2014-11-18 10:32:26
+ * @version $Id$
+ */
+body,ul,ol,li {margin: 0; padding: 0;}
+li {list-style: none;}
+.tc{text-align: center;} .red {color: #f00;}.lh30 {line-height: 30px}
+header,section,footer {display: block;}
+.header,
+.footer {
+	position: fixed;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	background-color: #3e3f3a;
+}
+.header {
+	padding-left: 20px;
+}
+.content {
+	padding-top: 30px;
+	margin-bottom: 30px;
+}
+.footer {
+	text-align: center;
+	bottom: 0;
+}
+.header a,
+.header a:visited,
+.footer a,
+.footer a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+.header a:hover,
+.footer a:hover {
+	color: #ccc;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>web-animations-9</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="../../css/common.css" />
+<script type="text/javascript" src="web-animation-post.js"></script>
+</head>
+<body>
+<div id="page">
+	<header class="header">
+		<a href="http://www.zuojj.com" title="Benjamin">Back to Home</a>
+	</header>
+	<section class="content">
+<style type="text/css">
+.web-animation-9 {
+	position: relative;
+	width: 700px;
+	height: 250px;
+	border: 1px solid #ccc;
+	margin: 0 auto;
+}
+#animate-controls {
+	width: 700px;
+	margin: 5px auto;
+}
+#animate-ball-container {
+	position: absolute;
+	bottom: 0;
+	width: 50px;
+	height: 50px;
+	padding: 4px;
+	border-radius: 50%;
+	background-color: #f00;
+}
+#animate-ball {
+	width: 50px;
+	height: 50px;
+	background-color: #fff;
+	border-radius: 50%;
+	color: #00f;
+	line-height: 50px;
+	text-align: center;
+	font-size: 50px;
+	font-family: "Microsof Yahei";
+}
+</style>
+<div id="web_animation_9" class="web-animation-9">
+	<div id="animate-ball-container"><div id="animate-ball">X</div></div>
+</div>
+<div id="animate-controls">
+	<button id="keyframe-start">start Keyframe</button>
+	<button id="motionpath-start">start Motionpath</button>
+	<button id="pause">pause</button>
+	<button id="cancel">stop</button>
+	<button id="play">resume</button>
+	<button id="reverse">reverse</button>
+</div>
+<script type="text/javascript">
+(function(document) {
+
+	'use strict';
+	var Animations = {},
+		player, controls = document.getElementById('animate-controls');
+
+	Animations.targets = {
+		path: document.getElementById('path'),
+		ballContainer: document.getElementById('animate-ball-container'),
+		ball: document.getElementById('animate-ball')
+	};
+
+	Animations.keyframeMove = new Animation(Animations.targets.ballContainer, [{
+		offset: 0,
+		transform: 'translate(0,0)'
+	}, {
+		offset: 1,
+		transform: 'translate(600,0)'
+	}], {
+		duration: 2000
+	});
+
+	Animations.keyframeSpinRoll = new Animation(Animations.targets.ball, [{
+		transform: 'rotate(950deg)'
+	}], {
+		duration: 2000
+	});
+
+	Animations.motionpathBounce = new Animation(Animations.targets.ballContainer, new MotionPathEffect("M25,25 " + "a150,100 0 0,1 300,0 " + "a75,50 0 0,1 150,0 " + "a35,20 0 0,1 70,0 " + "a2,1 0 0,1 35,0 " + "h45"), {
+		duration: 2500
+	});
+
+	Animations.keyframeSpinBounce = new Animation(Animations.targets.ball, [{
+		transform: 'rotate(950deg)'
+	}], {
+		duration: 2500
+	});
+
+	Animations.animationGroupRoll = new AnimationGroup([Animations.keyframeMove, Animations.keyframeSpinRoll], {
+		easing: 'ease-out'
+	});
+
+	Animations.animationGroupBounce = new AnimationGroup([Animations.motionpathBounce, Animations.keyframeSpinBounce], {
+		easing: 'ease-out'
+	});
+
+	controls.addEventListener('click', function(event) {
+		if (event.target) {
+			var targetElement = event.target;
+			switch (targetElement.id) {
+				case 'keyframe-start':
+					player = document.timeline.play(Animations.animationGroupRoll);
+					break;
+				case 'motionpath-start':
+					player = document.timeline.play(Animations.animationGroupBounce);
+					break;
+				case 'pause':
+					player.pause();
+					break;
+				case 'cancel':
+					player.cancel();
+					break;
+				case 'play':
+					player.play();
+					break;
+				case 'reverse':
+					player.reverse()
+			}
+		}
+	})
+})(document);
+
+</script>
+	</section>
+	<footer class="footer">
+		<a href="http://www.zuojj.com" title="Benjamin-专注前端开发和用户体验">Benjamin-专注前端开发和用户体验</a>
+	</footer>
+</div>
+</body>
+</html>

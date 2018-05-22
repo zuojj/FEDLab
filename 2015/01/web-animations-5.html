@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>web-animations-5</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="../../css/common.css" />
+<script type="text/javascript" src="web-animations.js"></script>
+</head>
+<body>
+<div id="page">
+	<header class="header">
+		<a href="http://www.zuojj.com" title="Benjamin">Back to Home</a>
+	</header>
+	<section class="content">
+<style type="text/css">
+.web_animation_5 {
+	width: 700px;
+	margin: 0 auto;
+	padding: 10px;
+	background-color: #ccc;
+	cursor: pointer;
+}
+.web_animation_5 .seq-timing-box {
+	background-color: #f0f;
+	height: 20px;
+	margin: 10px 0;
+}
+</style>
+<div id="web_animation_5" class="web_animation_5">
+	<div id="seqItem1" class="seq-timing-box" style="width: 0;"></div>
+	<div id="seqItem2" class="seq-timing-box" style="width: 0;margin-left:200px"></div>
+	<div id="seqItem3" class="seq-timing-box" style="width: 0;margin-left:500px"></div>
+</div>
+<script type="text/javascript">
+var web_animation_5 = document.getElementById("web_animation_5"),
+	seqItem1 = document.getElementById("seqItem1"),
+	seqItem2 = document.getElementById("seqItem2"),
+	seqItem3 = document.getElementById("seqItem3");
+
+web_animation_5.addEventListener('click', function() {
+	var obj = new SeqGroup([
+		new Animation(seqItem1, [{width: '0px'}, {width: '200px'}], 1),
+		new Animation(seqItem2, [{width: '0px'}, {width: '300px'}], 1),
+		new Animation(seqItem3, [{width: '0px'}, {width: '200px'}], 1),
+	])
+	document.timeline.play(obj);
+}, false);
+
+</script>
+
+	</section>
+	<footer class="footer">
+		<a href="http://www.zuojj.com" title="Benjamin-专注前端开发和用户体验">Benjamin-专注前端开发和用户体验</a>
+	</footer>
+</div>
+</body>
+</html>

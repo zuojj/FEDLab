@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>animations-keyframes</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="../../css/common.css" />
+</head>
+<body>
+<div id="page">
+	<header class="header">
+		<a href="http://www.zuojj.com" title="Benjamin">Back to Home</a>
+	</header>
+	<section class="content">
+		<style type="text/css">
+		.animate {
+			width: 200px;
+			height: 200px;
+			margin: 0 auto;
+			border-radius: 50%;
+			background-color: #f00;
+			line-height: 200px;
+			border-radius: 50%;
+			text-align: center;
+			color: #fff;
+			font-size: 20px;
+		}
+		.animate-keyframes {
+			-webkit-animation: frames 2s linear infinite;
+		}
+
+		.animate-keyframes:hover {
+			cursor: pointer;
+			-webkit-animation: none;
+		}
+
+		@-webkit-keyframes frames {
+			0% {
+				background-color: #f00;
+				-webkit-transform: rotate(0deg);
+			}
+			100% {
+				background-color: #f00;
+				-webkit-transform: rotate(360deg);
+			}
+		}
+		</style>
+		<div class="animate animate-keyframes">keyframes animation</div>
+	</section>
+	<footer class="footer">
+		<a href="http://www.zuojj.com" title="Benjamin-专注前端开发和用户体验">Benjamin-专注前端开发和用户体验</a>
+	</footer>
+</div>
+</body>
+</html>

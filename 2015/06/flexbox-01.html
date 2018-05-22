@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Flexbox#1</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="../../css/common.css" />
+<style type="text/css">
+[class^="face"] {
+  margin: 16px;
+  padding: 4px;
+  
+  background-color: #e7e7e7;
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+  
+  box-shadow:
+    inset 0 5px white, 
+    inset 0 -5px #bbb,
+    inset 5px 0 #d7d7d7, 
+    inset -5px 0 #d7d7d7;
+  
+  border-radius: 10%;
+  margin: 0 auto;
+}
+
+.dot {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin: 4px;
+
+  background-color: #333;
+  box-shadow: inset 0 3px #111, inset 0 -3px #555;
+}
+
+.face-01 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.face-02 {
+	display: flex;
+	justify-content: space-between;
+}
+.face-02 .dot:nth-of-type(2) {
+	align-self: flex-end;
+}
+
+.face-03 {
+	display: flex;
+	justify-content: space-between;
+}
+.face-03 .dot:nth-of-type(2) {
+	align-self: center;
+}
+.face-03 .dot:nth-of-type(3) {
+	align-self: flex-end;
+}
+
+.face-04 {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.face-04 .column {
+	display: flex;
+	justify-content: space-between;
+}
+.face-05 {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.face-05 .column {
+	display: flex;
+	justify-content: space-between;
+}
+.face-05 .column:nth-of-type(2) {
+	justify-content: center;
+}
+.face-06 {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.face-06 .column {
+	display: flex;
+	justify-content: space-between;
+}
+</style>
+</head>
+<body>
+<div id="page">
+	<header class="header">
+		<a href="http://www.zuojj.com" title="Benjamin">Back to Home</a>
+	</header>
+	<section class="content">
+<section name="01" class="face-01">
+	<span class="dot"></span>
+</section>
+<section name="02" class="face-02">
+	<span class="dot"></span>
+	<span class="dot"></span>
+</section>
+<section name="03" class="face-03">
+	<span class="dot"></span>
+	<span class="dot"></span>
+	<span class="dot"></span>
+</section>
+<section name="04" class="face-04">
+  <div class="column">
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  <div class="column">
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+<section name="05" class="face-05">
+  <div class="column">
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  <div class="column">
+    <span class="dot"></span>
+  </div>
+  <div class="column">
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+<section name="06" class="face-06">
+  <div class="column">
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  <div class="column">
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  <div class="column">
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+	</section>
+	<footer class="footer">
+		<a href="http://www.zuojj.com" title="Benjamin-专注前端开发和用户体验">Benjamin-专注前端开发和用户体验</a>
+	</footer>
+</div>
+</body>
+</html>

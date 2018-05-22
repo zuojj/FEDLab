@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>web-animations-6</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="../../css/common.css" />
+<script type="text/javascript" src="web-animations.js"></script>
+</head>
+<body>
+<div id="page">
+	<header class="header">
+		<a href="http://www.zuojj.com" title="Benjamin">Back to Home</a>
+	</header>
+	<section class="content">
+<style type="text/css">
+.web_animation_6 {
+	width: 700px;
+	margin: 0 auto;
+	padding: 10px;
+	background-color: #ccc;
+	cursor: pointer;
+}
+.web_animation_6 .outer-seq-timing-box {
+	background-color: #00f;
+	height: 20px;
+	margin: 10px 0;
+}
+.web_animation_6 .inner-par-timing-box {
+	background-color: #f0f;
+	height: 20px;
+	margin: 10px 0;
+}
+</style>
+<div id="web_animation_6" class="web_animation_6">
+	<div id="outerSeqItem1" class="outer-seq-timing-box" style="width: 0;"></div>
+	<div class="innerParGroup" style="width: 0;margin-left:200px">
+		<div id="innerParItem1" class="inner-par-timing-box"></div>
+		<div id="innerParItem2" class="inner-par-timing-box"></div>
+		<div id="innerParItem3" class="inner-par-timing-box"></div>
+	</div>
+	<div id="outerSeqItem2" class="outer-seq-timing-box" style="width: 0;margin-left:500px"></div>
+</div>
+<script type="text/javascript">
+var web_animation_6 = document.getElementById("web_animation_6"),
+	outerSeqItem1 = document.getElementById("outerSeqItem1"),
+	outerSeqItem2 = document.getElementById("outerSeqItem2"),
+	innerParItem1 = document.getElementById("innerParItem1"),
+	innerParItem2 = document.getElementById("innerParItem2"),
+	innerParItem3 = document.getElementById("innerParItem3");
+
+web_animation_6.addEventListener('click', function() {
+	var parobj = new ParGroup([
+		new Animation(innerParItem1, [{width: '0px'}, {width: '300px'}], 1),
+		new Animation(innerParItem2, [{width: '0px'}, {width: '300px'}], 1),
+		new Animation(innerParItem3, [{width: '0px'}, {width: '300px'}], 1),
+	]);
+	var seqobj = new SeqGroup([
+			new Animation(outerSeqItem1, [{width: '0px'}, {width: '200px'}], 1),
+			parobj,
+			new Animation(outerSeqItem2, [{width: '0px'}, {width: '200px'}], 1),
+		]);
+	document.timeline.play(seqobj);
+}, false);
+
+</script>
+
+	</section>
+	<footer class="footer">
+		<a href="http://www.zuojj.com" title="Benjamin-专注前端开发和用户体验">Benjamin-专注前端开发和用户体验</a>
+	</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SVG-currentColor</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="../../../css/common.css" />
+<style type="text/css">
+	.svg {
+		width: 200px;
+		border: 1px solid;
+		color: #f0f;
+		margin: 0 auto;
+	}
+	svg {
+		text-align: center;
+		width: 30px;
+		height: 30px;
+		fill: currentColor;
+	}
+</style>
+</head>
+<body>
+<div id="page">
+	<header class="header">
+		<a href="http://www.zuojj.com" title="Benjamin">Back to Home</a>
+	</header>
+	<section class="content">
+		<div class="lh30 red tc">Chrome Firefox IE >= 10 Safari Opera iOS Safari Android Browser >= 4.4 Chrome for Android</div>
+		<div class="svg lh30 tc" id="svg_wrapper">
+			<div>文字颜色color: #0f0;</div>
+			<div>
+				<svg id="icons" viewBox="0 0 48 48" version="1.1"
+			    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+			  style="vertical-align:-8px">
+				    <g id="explore">
+				      <path d="M24,4C13,4,4,13,4,24c0,11,9,20,20,20c11,0,20-9,20-20C44,13,35,4,24,4z"/>
+				      <path d="M28.4,28.4L12,36l7.6-16.4L36,12L28.4,28.4z" fill="#FFF"/>
+				      <path d="M24,21.8c-1.2,0-2.2,1-2.2,2.2s1,2.2,2.2,2.2c1.2,0,2.2-1,2.2-2.2S25.2,21.8,24,21.8z"/>
+				    </g>
+				</svg>
+				指南针
+			</div>
+			<div>
+				<select id="sel_color">
+					<option value="#f0f">#f0f</option>
+					<option value="#0f0">#0f0</option>
+					<option value="#f00">#f00</option>
+				</select>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<a href="http://www.zuojj.com" title="Benjamin-专注前端开发和用户体验">Benjamin-专注前端开发和用户体验</a>
+	</footer>
+</div>
+<script type="text/javascript" src="svg-morpheus.js"></script>
+<script type="text/javascript">
+(function() {
+	var icons = new SVGMorpheus('#icons'),
+		svg   = document.getElementById("svg_wrapper"),
+		sel_color   = document.getElementById("sel_color");
+	icons.to('explore');
+
+	sel_color.onchange = function() {
+		svg_wrapper.style.cssText = "color:"+this.value;
+	}
+})(this);
+
+</script>
+</body>
+</html>

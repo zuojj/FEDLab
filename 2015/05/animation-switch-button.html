@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>animations-keyframes</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="../../css/common.css" />
+</head>
+<body>
+<div id="page">
+	<header class="header">
+		<a href="http://www.zuojj.com" title="Benjamin">Back to Home</a>
+	</header>
+	<section class="content">
+
+		<style>
+			body {background: #444;}
+			.switch {
+			  position: relative;
+			  margin: 20px auto;
+			  height: 26px;
+			  width: 120px;
+			  background: rgba(0, 0, 0, 0.25);
+			  border-radius: 3px;
+			  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8), 0 1px rgba(255, 255, 255, 0.3);
+			  background: #444;
+			}
+			.switch-label {
+			  position: relative;
+			  z-index: 2;
+			  float: left;
+			  width: 58px;
+			  line-height: 26px;
+			  font-size: 11px;
+			  color:#888;;
+			  text-align: center;
+			  text-shadow: 0 2px 1px rgba(0, 0, 0, 1);
+			  cursor: pointer;
+			}
+
+			.switch-label:hover {
+			  color:#fff;
+			}
+			.switch-input {
+			  display: none;
+			}
+			.switch-input:checked + .switch-label {
+			  font-weight: bold;
+			  color: rgba(0, 0, 0, 1);
+			  text-shadow: 0 1px 0px rgba(1, 1, 1, .1);
+			  transition: 0.15s ease-out;
+			}
+			.switch-input:checked + .switch-label-on ~ .switch-selection {
+			  left: 60px;
+			}
+			.switch-selection {
+			  display: block;
+			  position: absolute;
+			  z-index: 1;
+			  top: 2px;
+			  left: 2px;
+			  width: 58px;
+			  height: 22px;
+			  background:#888;
+			  border-radius: 3px;
+			  box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+			  transition: left 0.15s ease-out;
+			}
+		</style>
+		<div class="switch">
+			<input type="radio" class="switch-input" name="radioname" value="0" id="off" checked>
+			<label for="off" class="switch-label switch-label-off">OFF</label>
+			<input type="radio" class="switch-input" name="radioname" value="1" id="on">
+			<label for="on" class="switch-label switch-label-on">ON</label>
+			<span class="switch-selection"></span>
+		</div>
+	</section>
+	<footer class="footer">
+		<a href="http://www.zuojj.com" title="Benjamin-专注前端开发和用户体验">Benjamin-专注前端开发和用户体验</a>
+	</footer>
+</div>
+</body>
+</html>

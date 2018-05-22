@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/common.css" />
+    <title>Document</title>
+    <style>
+        form {
+            width: 80%;
+            margin: 5% auto;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 30px;
+        }
+        .title {
+            text-align: center;
+        }
+        .ulist li {
+            height: 24px;
+            line-height: 24px;
+        }
+
+        .ulist li input {
+            vertical-align: -1px;
+        }
+
+        form:focus-within {
+            border-color: #f00;
+        }
+
+        .ulist:focus-within {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+        <header class="header">
+            <a href="http://www.fedlab.tech" title="Benjamin" id="returnBack">Back</a>
+        </header>
+        <section class="content">
+            <h3 class="title">表单应用</h3>
+            <form action="#" class="form">
+                <h3>省份：</h3>
+                <ul class="ulist">
+                    <li>
+                        <input type="radio" id="ra-01" name="province">
+                        <label for="ra-01">北京市</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="ra-02" name="province">
+                        <label for="ra-02">天津市</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="ra-03" name="province">
+                        <label for="ra-03">重庆市</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="ra-04" name="province">
+                        <label for="ra-04">上海市</label>
+                    </li>
+                </ul>
+                <h3>城市：</h3>
+                <ul class="ulist">
+                    <li>
+                        <input type="radio" id="city-01" name="city">
+                        <label for="city-01">海淀区</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="city-02" name="city">
+                        <label for="city-02">东城区</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="city-03" name="city">
+                        <label for="city-03">西城区</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="city-04" name="city">
+                        <label for="city-04">朝阳区</label>
+                    </li>
+                </ul>
+            </form>
+        </section>
+        <footer class="footer">
+            <a href="http://www.fedlab.tech" title="FED实验室">FED实验室</a>
+        </footer>
+    </div>
+    <script>
+        (function (window) {
+            let goback = document.querySelector('#returnBack');
+            goback.href = document.referrer || 'http://www.fedlab.tech';
+        })(window);
+    </script>
+</body>
+
+</html>

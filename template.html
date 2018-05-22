@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/common.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="page">
+        <header class="header">
+            <a href="http://www.fedlab.tech" title="Benjamin" id="returnBack">Back</a>
+        </header>
+        <section class="content">
+        </section>
+        <footer class="footer">
+            <a href="http://www.fedlab.tech" title="FED实验室">FED实验室</a>
+        </footer>
+    </div>
+    <script>
+    (function(window) {
+        let goback = document.querySelector('#returnBack');
+        goback.href = document.referrer || 'http://www.fedlab.tech';
+    })(window);
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>web-animations-7</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="../../css/common.css" />
+<script type="text/javascript" src="web-animations.js"></script>
+</head>
+<body>
+<div id="page">
+	<header class="header">
+		<a href="http://www.zuojj.com" title="Benjamin">Back to Home</a>
+	</header>
+	<section class="content">
+<style type="text/css">
+.web-animation-7 {
+	width: 60px;
+	height: 60px;
+	background-color: #f00;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 60px;
+	color: #fff;
+	cursor: pointer;
+}
+</style>
+<div id="web_animation_7" class="web-animation-7">Ani-7</div>
+<script type="text/javascript">
+var web_animation_7 = document.getElementById("web_animation_7");
+
+web_animation_7.addEventListener('click', function() {
+	var obj = new Animation(web_animation_7,
+		new PathAnimationEffect(
+			'M 100 200 ' +
+			'C 200 100 300   0 400 100 ' +
+			'C 500 200 600 300 700 200 ' +
+			'C 800 100 900 100 900 100', 'auto-rotate'), {
+			duration: 2,
+			direction: 'alternate',
+			easing: 'ease-in-out',
+			iterations: Infinity,
+		});
+
+	document.timeline.play(obj);
+}, false);     
+</script>
+	</section>
+	<footer class="footer">
+		<a href="http://www.zuojj.com" title="Benjamin-专注前端开发和用户体验">Benjamin-专注前端开发和用户体验</a>
+	</footer>
+</div>
+</body>
+</html>

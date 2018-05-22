@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>web-animations-8</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="../../css/common.css" />
+<script type="text/javascript" src="web-animations.js"></script>
+</head>
+<body>
+<div id="page">
+	<header class="header">
+		<a href="http://www.zuojj.com" title="Benjamin">Back to Home</a>
+	</header>
+	<section class="content">
+<div class="web_animation_8" id="web_animation_8"></div>   
+<script type="text/javascript">
+function customAnimationEffect(timeFraction, iteration, target) {
+	web_animation_8.innerHTML = 'timeFraction: ' + timeFraction.toFixed(2) + '\n' +
+                             'iteration: ' + iteration;
+}
+var web_animation_8 = document.getElementById("web_animation_8");
+
+var obj = new Animation(null,
+    {sample: customAnimationEffect},
+    {
+		duration: 2,
+		direction: 'alternate',
+		easing: 'ease-in-out',
+		iterations: Infinity,
+	});
+
+var customPlayer = document.timeline.play(obj);
+
+window.addEventListener('slideenter', function(event) {
+	if (event.slide == customSlide) {
+		customPlayer.currentTime = 0;
+	}
+}, false);  
+
+</script>
+	</section>
+	<footer class="footer">
+		<a href="http://www.zuojj.com" title="Benjamin-专注前端开发和用户体验">Benjamin-专注前端开发和用户体验</a>
+	</footer>
+</div>
+</body>
+</html>
